@@ -1,7 +1,7 @@
 {
-  "name": "videotube",
+  "name": "Backend",
   "version": "1.0.0",
-  "description": "youtube like app videoTube",
+  "description": "youtube like app Backend",
   "main": "index.js",
   "scripts": {
     "build": "npx tsc",
@@ -9,7 +9,7 @@
     "dev": "nodemon ./src/server.ts"
   },
   "keywords": [
-    "videotube",
+    "Backend",
     "youtube-clone"
   ],
   "author": "Muhammad Kamran",

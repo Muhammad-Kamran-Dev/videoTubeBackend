@@ -1,7 +1,7 @@
 import express, { Application } from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-
+import userRoutes from "./routes/userRoute";
 const app: Application = express();
 
 //  To allow cross-origin requests
@@ -27,5 +27,8 @@ app.use(express.static("public"));
 
 // parse Cookies
 app.use(cookieParser());
+
+// Routes Middleware
+app.use("/api/v1", userRoutes);
 
 export { app };
