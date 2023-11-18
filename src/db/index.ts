@@ -8,10 +8,14 @@ dotenv.config({
 
 // Connect to MongoDB
 const connectDB = async () => {
+  const mongoDbUri =
+    process.env.NODE_ENVIRONMENT === "production"
+      ? `${process.env.MONGODB_URI}`
+      : `mongodb://127.0.0.1:27017/${DB_NAME}`;
+  console.log("uri is ", mongoDbUri);
   try {
-    const connectionInstance = await mongoose.connect(
-      "mongodb://127.0.0.1:27017/Backend"
-    );
+    const connectionInstance = await mongoose.connect(mongoDbUri);
+
     console.log(
       `\n MongoDB connected !! DB HOST: ${connectionInstance.connection.host}`
     );
